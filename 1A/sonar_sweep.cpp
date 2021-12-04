@@ -17,5 +17,20 @@ int main(int argc, char *argv[]) {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
+    ll sonar_scans = 2000;
+    ll prev = -1;
+    ll increases = 0;
+    FOR(i, sonar_scans) {
+        ll scan;
+        cin >> scan;
+        if (prev != -1) {
+            if (prev < scan) {
+                increases++;
+            }
+        }
+        prev = scan;
+    }
+    cout << increases << "\n";
+
     return 0;
 }
